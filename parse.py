@@ -23,7 +23,7 @@ def hostnametoip(domain):
             ip = socket.gethostbyname(domain)
         except:
             ip = '0.0.0.0'
-            print('IP failed for %s' % domain)
+            print("Failed to resolve DNS for %s" % domain, file=sys.stderr)
         known_hosts[domain] = ip
 
     return ip
